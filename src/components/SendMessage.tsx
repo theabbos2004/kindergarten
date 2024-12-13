@@ -4,7 +4,7 @@ import StarImg from "../assets/Frame (1).png"
 import { EmailForm, Title } from "./shared"
 export default function SendMessage() {
   return (
-    <div className=" w-full p-10">
+    <div className=" w-full p-10" id="Contact-Us">
         <div className=" relative py-20 w-full bg-[length:100%_100%]" style={{backgroundImage:`url(${BgImage})`}}>
             <div className="flex items-end gap-5 absolute top-10 left-10 z-0">
                 <img src={CleaverImg} className="w-12 md:w-20 "/>

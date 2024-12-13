@@ -25,10 +25,11 @@ export default function EmialForm(){
         }
         return errors;
       }}
-      onSubmit={(values, { setSubmitting }) => {
+      onSubmit={(values, { setSubmitting ,resetForm}) => {
         try{
           console.log(values);
           alert("success")
+          resetForm()
         }
         catch(error){
           console.log(values);

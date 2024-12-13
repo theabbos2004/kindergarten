@@ -10,13 +10,42 @@ export default function Header() {
         <div className={`w-full sm:h-20 flex bg-[var(--purple)] py-1 ${isMenu?"h-[calc(100vh)] flex-col":"h-16 flex-row"}`}>
             <div className={`${isMenu?"h-[5%]":"h-full"} sm:h-full container mx-auto  flex items-center justify-between border-none`}>
                 <img src={CleverIcon} className=" w-12 sm:w-18"/>
-                <ul className="sm:flex gap-4 hidden">
+                <ul className={`sm:flex gap-4 hidden`}>
                     {navborList.map((nav,navIndex)=>
-                        <li key={navIndex}>{nav?.title}</li>
+                        <li key={navIndex} className="hover:text-[var(--orange)] cursor-pointer">
+                            <Link
+                                to={nav?.route} 
+                                key={navIndex}
+                                spy={true} 
+                                smooth={true} 
+                                offset={50} 
+                                duration={500} 
+                                className={`font-bold no-underline ${nav?.active ?'text-gray-50':"text-gray-300"} hover:text-gray-100 cursor-pointer`}
+                                onClick={()=>{
+                                    activeNavbar(nav)
+                                    setIsMenu(false)
+                                }}
+                                >
+                                {nav?.title}
+                            </Link>
+                        </li>
                     )}
                 </ul>
                 <div className="flex gap-4">
-                    <Button className="bg-[var(--orange)] text-[var(--purple)] outline-yellow-500 " >Join Now</Button>
+                    <Link
+                        to={navborList[6].route}
+                        spy={true} 
+                        smooth={true} 
+                        offset={50} 
+                        duration={500} 
+                        className={`font-bold no-underline cursor-pointer`}
+                        onClick={()=>{
+                            activeNavbar(navborList[6])
+                            setIsMenu(false)
+                        }}
+                        >
+                        <Button className="bg-[var(--orange)] text-[var(--purple)] outline-yellow-500 " >Join Now</Button>
+                    </Link>
                     <MenuOutlined className={`text-2xl ${isMenu?"hidden":"block sm:hidden"}`} onClick={()=>setIsMenu((store:any)=>!store)}/>
                     <CloseOutlined className={`text-2xl ${isMenu?"block sm:hidden":"hidden"}`} onClick={()=>setIsMenu((store:any)=>!store)}/>
                 </div>

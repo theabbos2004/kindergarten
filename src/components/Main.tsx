@@ -4,7 +4,10 @@ import Image6 from "../assets/image 6.png"
 import Image3 from "../assets/image 3.png"
 import Image7 from "../assets/image 7.png"
 import { Button } from "./shared"
+import { Link } from "react-scroll"
+import { useMainContext } from "../contexts"
 export default function Main() {
+    const {setIsMenu,navborList,activeNavbar}=useMainContext()
   return (
     <div id="Home" className='w-full py-36 h-min-[100vh] bg-main bg-cover bg-bottom'>
         <div className=" container m-auto flex justify-around gap-10 sm:gap-0 items-center flex-col sm:flex-row">
@@ -15,7 +18,20 @@ export default function Main() {
                     Bog`chasi</h1>
                 </div>
                 <p className="text-purple-800">Formulate innovative web-readiness and installed base ideas. Distinctively integrate high-payoff paradigms without next generation systems disseminate holistic e-services through customer directed expertise.</p>
-                <Button className="bg-[var(--purple)] w-32 outline-purple-600">Join now</Button>
+                <Link
+                    to={navborList[6].route}
+                    spy={true} 
+                    smooth={true} 
+                    offset={50} 
+                    duration={500} 
+                    className={`font-bold no-underline cursor-pointer`}
+                    onClick={()=>{
+                        activeNavbar(navborList[6])
+                        setIsMenu(false)
+                    }}
+                    >
+                    <Button className="bg-[var(--purple)] w-32 outline-purple-600 text-gray-50">Join now</Button>                    
+                </Link>
             </div>
             <div className="w-10/12 sm:w-2/5 flex flex-col">
                 <div className="flex w-full gap-4">

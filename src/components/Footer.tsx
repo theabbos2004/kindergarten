@@ -4,7 +4,7 @@ import { Button } from "./shared"
 import { FacebookOutlined, InstagramOutlined, LinkedinOutlined, TwitterOutlined } from "@ant-design/icons";
 export default function Footer() {
     return (
-        <div className="w-full bg-[var(--black)] p-6" id="Contact-Us">
+        <div className="w-full bg-[var(--black)] p-6">
             <div className="m-auto container">
                 <div>
                     <img src={CleverImg} className="w-16" />

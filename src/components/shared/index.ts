@@ -1,0 +1,6 @@
+export {default as Button } from "./button"
+export {default as Title } from "./Title"
+export {default as Card } from "./Card"
+export {default as LessonCard } from "./LessonCard"
+export {default as EducationCard } from "./EducationCard"
+export {default as EmailForm } from "./EmailForm"
